@@ -1,0 +1,129 @@
+<?@include_once('./top.html');?>
+
+        <section>
+            <article class="admin_review_hospital admin_review">
+
+                <?@include_once('./admin_review_top.html');?>
+
+                <div class="wrap">
+                    <div class="sort">
+                        <ul>
+                            <li class="on">최초 등록시간 순</li>
+                            <li class="line">|</li>
+                            <li>등록/수정시간 순</li>
+                            <li class="line">|</li>
+                            <li>확인필요 순</li>
+                            <li class="line">|</li>
+                            <li>반려 순</li>
+                            <li class="line">|</li>
+                            <li>리뷰댓글 많은 순</li>
+                            <li class="line">|</li>
+                            <li>리뷰댓글 적은 순</li>
+                        </ul>
+                        <div class="excel">
+                            <button>일괄 확인완료</button>
+                            <button>일괄 반려</button>
+                        </div>
+                    </div>
+                    <div class="scroll_m">
+                        <form class="" action="index.html" method="post">
+                            <fieldset>
+                                <table>
+                                    <colgroup>
+                                        <col width="3%">
+                                        <col width="8%">
+                                        <col width="8%">
+                                        <col width="10%">
+                                        <col width="8%">
+                                        <col width="5%">
+                                        <col width="27%">
+                                        <col width="9%">
+                                        <col width="9%">
+                                        <col width="4%">
+                                        <col width="4%">
+                                        <col width="5%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <input type="checkbox" name="" value="">
+                                            </th>
+                                            <th>유저idx</th>
+                                            <th>이메일</th>
+                                            <th>닉네임</th>
+                                            <th>병원idx</th>
+                                            <th>평점합</th>
+                                            <th>리뷰</th>
+                                            <th>최초등록 시간</th>
+                                            <th>등록/수정 시간</th>
+                                            <th>댓글 수</th>
+                                            <th>구분</th>
+                                            <th>확인</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" name="" value=""></td>
+                                            <td class="userid abb"><a href="admin_review_hospital_sub.html"><p>d1231233</p></a></td>
+                                            <td class="email abb"><p>123@gmail.com</p></td>
+                                            <td class="nick abb"><p>갈매기123231</p></td>
+                                            <td class="goodsid abb"><p>d1231233</p></td>
+                                            <td>3.1</td>
+                                            <td class="review"><a href="admin_review_hospital_sub.html"><p>살려주세요. 누가 악플을 달아요.살려주세요. 누가 악플을 달아요.</p></a></td>
+                                            <td>
+                                                <p>2019.01.01</p>
+                                                <p>23:11:11</p>
+                                            </td>
+                                            <td>
+                                                <p>2019.01.01</p>
+                                                <p>23:11:11</p>
+                                            </td>
+                                            <td>231</td>
+                                            <td>수정</td>
+                                            <td class="btn_confirm">
+                                                <button>ok</button>
+                                                <button>반려</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="" value=""></td>
+                                            <td class="userid abb"><a href="admin_review_hospital_sub.html"><p>d1231233</p></a></td>
+                                            <td class="email abb"><p>123@gmail.com</p></td>
+                                            <td class="nick abb"><p>갈매기123231</p></td>
+                                            <td class="goodsid abb"><p>d1231233</p></td>
+                                            <td>3.1</td>
+                                            <td class="review"><a href="admin_review_hospital_sub.html"><p>살려주세요. 누가 악플을 달아요.살려주세요. 누가 악플을 달아요.</p></a></td>
+                                            <td>
+                                                <p>2019.01.01</p>
+                                                <p>23:11:11</p>
+                                            </td>
+                                            <td>
+                                                <p>2019.01.01</p>
+                                                <p>23:11:11</p>
+                                            </td>
+                                            <td>231</td>
+                                            <td>수정</td>
+                                            <td class="btn_confirm">
+                                                <button>반려</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="pgnation">
+                      <ul>
+                        <li class="left_more"><a href="#"></a></li>
+                        <li class="left"><a href="#"></a></li>
+                        <li class="pg now_pg"><a href="#">1</a></li>
+                        <li class="pg"><a href="#">2</a></li>
+                        <li class="right"><a href="#"></a></li>
+                        <li class="right_more"><a href="#"></a></li>
+                      </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>

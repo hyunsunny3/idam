@@ -1,0 +1,109 @@
+<?@include_once('./top.html');?>
+
+        <section>
+            <article class="admin_ad_main admin_ad">
+
+                <?@include_once('./admin_AD_top.html');?>
+
+                <div class="wrap">
+                    <div class="sort">
+                        <ul>
+                            <li class="on">등록 순</li>
+                            <li class="line">|</li>
+                            <li>시작 시간 순</li>
+                            <li class="line">|</li>
+                            <li>종료 시간 순</li>
+                        </ul>
+                        <button type="button" name="button" onclick="location.href='admin_AD_main_new.html'">신규생성</button>
+                    </div>
+                    <div class="scroll_m">
+                        <form class="" action="index.html" method="post">
+                            <fieldset>
+                                <table style="width:1000px;">
+                                    <colgroup>
+                                        <col width="5%">
+                                        <col width="5%">
+                                        <col width="17%">
+                                        <col width="9%">
+                                        <col width="11%">
+                                        <col width="11%">
+                                        <col width="9%">
+                                        <col width="9%">
+                                        <col width="7%">
+                                        <col width="7%">
+                                        <col width="9%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox" name="" value=""></th>
+                                            <th>순서</th>
+                                            <th>제목</th>
+                                            <th>현황</th>
+                                            <th>시작시간</th>
+                                            <th>종료시간</th>
+                                            <th>노출 수</th>
+                                            <th>유니크<br>노출수</th>
+                                            <th>클릭수</th>
+                                            <th>클릭율</th>
+                                            <th>일자별</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" name="" value=""></td>
+                                            <td>1</td>
+                                            <td class="review"><p>스토케 프로모션스토케 프로모션</p></td>
+                                            <td>노출대기</td>
+                                            <td>
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                            <td>123,123,123</td>
+                                            <td>123,123</td>
+                                            <td>1,123</td>
+                                            <td>1,21%</td>
+                                            <td><a href="admin_AD_main_sub.html">자세히보기</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="" value=""></td>
+                                            <td>1</td>
+                                            <td class="review"><p>스토케 프로모션</p></td>
+                                            <td>노출대기</td>
+                                            <td>
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                            <td>123,123,123</td>
+                                            <td>123,123</td>
+                                            <td>1,123</td>
+                                            <td>1,21%</td>
+                                            <td><a href="admin_AD_main_sub.html">자세히보기</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="pgnation">
+                      <ul>
+                        <li class="left_more"><a href="#"></a></li>
+                        <li class="left"><a href="#"></a></li>
+                        <li class="pg now_pg"><a href="#">1</a></li>
+                        <li class="pg"><a href="#">2</a></li>
+                        <li class="right"><a href="#"></a></li>
+                        <li class="right_more"><a href="#"></a></li>
+                      </ul>
+                    </div>
+                    <div class="btn_area">
+                      <button>저장</button>
+                      <button>취소</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>

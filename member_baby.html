@@ -1,0 +1,128 @@
+<?@include_once('./top.html');?>
+
+        <section>
+            <article class="member_baby member">
+
+                <?@include_once('./member_top.html');?>
+
+                <div class="wrap">
+                    <ul class="baby_sel">
+                        <li><a href="#">baby 1</a></li>
+                        <li><a href="#">baby 2</a></li>
+                        <li><a href="#">baby 3</a></li>
+                        <li class="add_baby"><a href="#">+</a></li>
+                    </ul>
+                    <form class="" action="index.html" method="post">
+                        <fieldset>
+                            <legend>baby 1</legend>
+                            <table>
+                                <colgroup>
+                                    <col width="16%">
+                                    <col width="60%">
+                                    <col width="24%">
+                                </colgroup>
+                                <tr>
+                                    <th>성</th>
+                                    <td><input type="text" name="child_name1" value=""></td>
+                                    <td class="btn_edit"><button>수정</button></td>
+                                </tr>
+                                <tr>
+                                    <th>이름</th>
+                                    <td><input type="text" name="child_name2" value=""></td>
+                                    <td class="btn_edit"><button>수정</button></td>
+                                </tr>
+                                <tr>
+                                    <th>성별</th>
+                                    <td colspan="2">
+                                        <select class="" name="child_gen">
+                                            <option value="0">male</option>
+                                            <option value="1">female</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>연령</th>
+                                    <td><input type="text" name="child_age" value=""></td>
+                                    <td class="btn_edit"><button>수정</button></td>
+                                </tr>
+                                <tr class="trouble">
+                                    <th>고민</th>
+                                    <td colspan="5">
+                                        <input type="checkbox" name="" value="" id="r1" class="r_input">
+                                        <label for="r1" class="check"><span>아토피</span></label>
+                                        <input type="checkbox" name="" value="" id="r2" class="r_input">
+                                        <label for="r2" class="check"><span>면역력</span></label>
+                                        <input type="checkbox" name="" value="" id="r3" class="r_input">
+                                        <label for="r3" class="check"><span>과체중</span></label>
+                                        <input type="checkbox" name="" value="" id="r4" class="r_input">
+                                        <label for="r4" class="check"><span>아토피</span></label>
+                                        <input type="checkbox" name="" value="" id="r5" class="r_input">
+                                        <label for="r5" class="check"><span>면역력</span></label>
+                                        <input type="checkbox" name="" value="" id="r6" class="r_input">
+                                        <label for="r6" class="check"><span>과체중</span></label>
+                                        <input type="checkbox" name="" value="" id="r7" class="r_input">
+                                        <label for="r7" class="check"><span>아토피</span></label>
+                                        <input type="checkbox" name="" value="" id="r8" class="r_input">
+                                        <label for="r8" class="check"><span>면역력</span></label>
+                                        <input type="checkbox" name="" value="" id="r9" class="r_input">
+                                        <label for="r9" class="check"><span>과체중</span></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>용품 좋아요</th>
+                                    <td>
+                                        <select class="" name="goods_best">
+                                            <option value="">-----</option>
+                                            <option value="">-----</option>
+                                        </select>
+                                    </td>
+                                    <td class="btn_del"><button>삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <th>병원 좋아요</th>
+                                    <td>
+                                        <select class="" name="hospital_best">
+                                            <option value="">연세키즈소아</option>
+                                            <option value="">2</option>
+                                        </select>
+                                    </td>
+                                    <td class="btn_del"><button>삭제</button></td>
+                                </tr>
+                            </table>
+
+                            <table class="week">
+                                <colgroup>
+                                    <col width="14%">
+                                    <col width="14%">
+                                    <col width="14%">
+                                    <col width="14%">
+                                    <col width="14%">
+                                    <col width="14%">
+                                    <col width="14%">
+                                </colgroup>
+                                <tr>
+                                    <th>4주</th>
+                                    <td><label>키</label><input type="text" name="" value=""></td>
+                                    <td><label>몸무게</label><input type="text" name="" value=""></td>
+                                    <td><label>머리</label><input type="text" name="" value=""></td>
+                                    <td><label>옷</label><input type="text" name="" value=""></td>
+                                    <td><label>발</label><input type="text" name="" value=""></td>
+                                    <td class="btn_edit"><button>수정</button></td>
+                                </tr>
+                                <tr>
+                                    <th>8주</th>
+                                    <td><label>키</label><input type="text" name="" value=""></td>
+                                    <td><label>몸무게</label><input type="text" name="" value=""></td>
+                                    <td><label>머리</label><input type="text" name="" value=""></td>
+                                    <td><label>옷</label><input type="text" name="" value=""></td>
+                                    <td><label>발</label><input type="text" name="" value=""></td>
+                                    <td class="btn_edit"><button>수정</button></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </form>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>

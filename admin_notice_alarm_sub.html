@@ -1,0 +1,84 @@
+<?@include_once('./top.html');?>
+
+        <section>
+            <article class="admin_notice_alarm_sub admin_notice admin_notice_sub">
+
+                <?@include_once('./admin_notice_top.html');?>
+
+                <div class="wrap">
+                    <div class="sort">
+                        <ul>
+                            <li>
+                                <input type="radio" name="" value="">
+                                신규 꼼품단 알림
+                            </li>
+                            <li>
+                                <input type="radio" name="" value="">
+                                신규 공지 알림
+                            </li>
+                            <li>
+                                <input type="radio" name="" value="">
+                                어워드/랭킹 소식 알림
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scroll_m">
+                        <form class="" action="index.html" method="post">
+                            <fieldset>
+                                <table>
+                                    <colgroup>
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                    </colgroup>
+                                    <tr>
+                                        <th>알림제목</th>
+                                        <td colspan="3">매일유업 튼튼 우유 꼼품단</td>
+                                    </tr>
+                                    <tr>
+                                        <th>방송일자</th>
+                                        <td>2019-01-01</td>
+                                        <th>발송시간</th>
+                                        <td>23:12:10</td>
+                                    </tr>
+                                    <tr>
+                                        <th>대상</th>
+                                        <td colspan="3" style="text-align:left;">
+                                            <input type="radio" name="" value=""><input type="text" name="" value="" placeholder="유저 idx" style="width:150px; height:100%; margin-right:20px;">
+                                            <input type="radio" name="" value=""><label for="">유저 전체</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>내용</th>
+                                        <td colspan="3">
+                                            <textarea name="name" rows="10">
+    매일유업 튼튼 우유 꼼품단이 게시되었습니다!!! 지금 바로 참가하기!
+                                            </textarea>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="btn_area">
+                        <button style="color:red;">발송취소</button>
+                        <button>발송</button><br>
+                        <button>수정하기</button>
+                        <button>취소</button>
+                    </div>
+                    <div class="pgnation">
+                      <ul>
+                        <li class="left_more"><a href="#"></a></li>
+                        <li class="left"><a href="#"></a></li>
+                        <li class="pg now_pg"><a href="#">1</a></li>
+                        <li class="pg"><a href="#">2</a></li>
+                        <li class="right"><a href="#"></a></li>
+                        <li class="right_more"><a href="#"></a></li>
+                      </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>

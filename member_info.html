@@ -1,0 +1,88 @@
+<?@include_once('./top.html');?>
+
+        <section>
+            <article class="member_info member">
+
+                <?@include_once('./member_top.html');?>
+
+                <form class="" action="index.html" method="post">
+                    <table>
+                        <colgroup>
+                            <col width="20%">
+                            <col width="60%">
+                            <col width="20%">
+                        </colgroup>
+                        <tr>
+                            <th>이메일</th>
+                            <td class="entry"><input type="text" name="mem_email" value=""></td>
+                            <td class="btn_edit"><button>수정</button></td>
+                        </tr>
+                        <tr>
+                            <th>닉네임</th>
+                            <td class="entry"><input type="text" name="mem_nick" value=""></td>
+                            <td class="btn_edit"><button>수정</button></td>
+                        </tr>
+                        <tr>
+                            <th>성별</th>
+                            <td class="entry">
+                                <select class="" name="mem_gen">
+                                    <option value="0">male</option>
+                                    <option value="1">female</option>
+                                </select>
+                            </td>
+                            <td class="btn_edit"><button>수정</button></td>
+                        </tr>
+                        <tr>
+                            <th>연령</th>
+                            <td class="entry"><input type="text" name="mem_age" value=""></td>
+                            <td class="btn_edit"><button>수정</button></td>
+                        </tr>
+                        <tr>
+                            <th>이름</th>
+                            <td class="entry"><input type="text" name="mem_name" value=""></td>
+                            <td class="btn_edit"><button>수정</button></td>
+                        </tr>
+                        <tr>
+                            <th>휴대폰</th>
+                            <td class="entry"><input type="text" name="mem_phone" value=""></td>
+                            <td class="btn_edit"><button>수정</button></td>
+                        </tr>
+                        <tr>
+                            <th>주소</th>
+                            <td class="entry"><input type="text" name="mem_addr" value=""></td>
+                            <td class="btn_edit"><button>수정</button></td>
+                        </tr>
+                    </table>
+                </form>
+                <div class="amount">
+                    <table>
+                        <tr>
+                            <td><label>인정 수</label><input type="text" name="" value=""></td>
+                            <td><label>인정받은 수</label><input type="text" name="" value=""></td>
+                            <td><label>관심 수</label><input type="text" name="" value=""></td>
+                            <td><label>관심받은 수</label><input type="text" name="" value=""></td>
+                        </tr>
+                        <tr>
+                            <td><label>용품 좋아요</label><input type="text" name="" value=""></td>
+                            <td><label>병원 좋아요</label><input type="text" name="" value=""></td>
+                            <td><label>포인트</label><input type="text" name="" value=""></td>
+                            <td><label>관심카테고리</label><input type="text" name="" value=""></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <col width="20%">
+                        <col width="30%">
+                        <col width="30%">
+                        <col width="20%">
+                        <tr>
+                            <th>계정블럭</th>
+                            <td><label>시작</label><input type="text" name="" value=""></td>
+                            <td><label>종료</label><input type="text" name="" value=""></td>
+                            <td><button>제재</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<?@include_once('./top.html');?>
+
+        <section>
+            <article class="ranking_official admin_ranking">
+
+                <?@include_once('./ranking_top.html');?>
+
+                <div class="wrap">
+                    <form class="" action="index.html" method="post">
+                        <fieldset>
+                            <table>
+                                <colgroup>
+                                    <!-- <col width="10%">
+                                    <col width="*"> -->
+                                </colgroup>
+                                <tr>
+                                    <th>합산 기간</th>
+                                    <td>
+                                        최근
+                                        <input type="text" name="" value="">
+                                        일 합산
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>1조건</th>
+                                    <td>
+                                        <select class="" name="">
+                                            <option value="">사용안함</option>
+                                            <option value="">평점의 합계</option>
+                                            <option value="">평점의 평균</option>
+                                            <option value="">평점의 수</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>2조건</th>
+                                    <td>
+                                        <select class="" name="">
+                                            <option value="">사용안함</option>
+                                            <option value="">평점의 합계</option>
+                                            <option value="">평점의 평균</option>
+                                            <option value="">평점의 수</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                            <dl class="">
+                                <dt>
+                                    최근 <span>7</span>일간 새로 등록된 <span>평점의 합계</span> X <span>평점의 평균</span> 로 용품 랭킹 산정
+                                </dt>
+                                <dd>
+                                    <p>* 다음 번 랭킹 취합부터 반영됩니다.</p>
+                                    <p>* 위 설정은 매일 23:59 ~ 24:59 시간 동안은 변경할 수 없습니다.</p>
+                                    <p>* 각 용품 별 랭킹 반영은 한 유저의 idx당 최초 1회에 한해서만 가능하며, 아래의 경우에는 랭킹 반영이 되지 않습니다.</p>
+                                    <p>- 한 유저가 평점을 매긴 후(리뷰 작성 후)수정 및 업데이트 하는 경우</p>
+                                    <p>- 한 유저가 평점을 매긴 후(리뷰 작성 후)해당 리뷰를 삭제 -> 다시 작성하는 경우</p>
+                                    <p></p>
+                                </dd>
+                                <dd class="btn_area">
+                                    <button>저장</button>
+                                    <button>취소</button>
+                                </dd>
+                            </dl>
+                        </fieldset>
+                    </form>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>
