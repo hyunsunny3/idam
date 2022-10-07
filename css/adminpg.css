@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.coin form table td {padding: 0;}
+.coin form table td input.checkbox {position: absolute; left: -9999px;}
+.coin form table td .label_check {width: 15px; height: 15px; border: 1px solid #ffd906;}
+.coin form table td input.txtbox {width: 100%; border: 0;}
+.coin form table td input.select {position: absolute; left: -9999px;}
+.coin form table td label.label {display: inline-block; float: left; width: 50%; height: 100%; border: 1px solid #f5f5f5; box-sizing: border-box; line-height: 50px;}
+.coin form .btn_add {width: 100px; height: 30px; border: 1px solid #ffd906; background: #fff; margin-top: 10px; float: right;}
+.coin form .btn_add:hover {background: #ffd906;}
+.coin .wrap {margin-top: 100px; padding: 20px 0; border-top: 2px solid #f5f5f5;}
+.coin .btn_area {text-align: left; padding: 0; width: 100%;}
+.coin .btn_area button {margin: 0; width: 100px; height: 30px;}
+
+input.select:checked + label.label {border: 1px solid #ffd906;}
+input.checkbox:checked + label.label_check {background: #ffd906;}

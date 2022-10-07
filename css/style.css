@@ -1,0 +1,476 @@
+@charset "UTF-8";
+
+/* font */
+@font-face {
+  font-family: notoBlack;
+  src: url(../font/NotoSansCJKkr-Black.otf);
+}
+@font-face {
+  font-family: notoB;
+  src: url(../font/NotoSansCJKkr-Bold.otf);
+}
+@font-face {
+  font-family: notoL;
+  src: url(../font/NotoSansCJKkr-Light.otf);
+}
+@font-face {
+  font-family: notoM;
+  src: url(../font/NotoSansCJKkr-Medium.otf);
+}
+@font-face {
+  font-family: notoR;
+  src: url(../font/NotoSansCJKkr-Regular.otf);
+}
+
+/* reset, common */
+* {margin: 0; padding: 0;}
+a {text-decoration: none; color: #000; display: inline-block;}
+a:hover {text-decoration: underline;}
+li {list-style: none;}
+img {max-width: 100%;}
+label, span {display: inline-block;}
+button{position: relative; cursor: pointer; border:0;}
+input::-webkit-input-placeholder {color: #ccc; opacity: 1;}
+input:focus {outline:none;}
+input {position: relative; height: 13px; padding: 0 10px; box-sizing: border-box; vertical-align: middle; border: 1px solid #ddd;}
+select {position: relative; width: 100%; height: 40px; vertical-align: middle; border: 1px solid #ddd;}
+select:focus {outline:none;}
+label {vertical-align: middle;}
+button:focus {outline:none; vertical-align: middle;}
+textarea:focus {outline: none;}
+textarea {width: 100%; height: auto; resize: vertical; border: 1px solid #ddd; padding: 5px; box-sizing: border-box;}
+
+body {font-family: 'notoL', 'Noto Sans TC', sans-serif; font-size: 16px;}
+section {position: relative; top: 70px; width: 100%; height: calc(100vh - 70px); padding: 50px;  padding-left: 220px; box-sizing: border-box; overflow-y: auto;}
+section article {position: relative; max-width: 1000px; margin: 0 auto;}
+form {position: relative; width: 100%; height: auto;}
+fieldset {position: relative; width: 100%; height: auto; border: 0;}
+table {position: relative; margin-top: 10px; width: 100%; height: auto; border-collapse: collapse;}
+table caption {width: 100%; text-align: left; padding: 10px; box-sizing: border-box;}
+table th {position: relative; height: 50px; text-align: center; border: 1px solid #eee; font-size: 0.9em; padding: 5px; box-sizing: border-box;}
+table td {position: relative; height: 50px; text-align: center; border: 1px solid #eee; font-size: 0.9em; padding: 5px; box-sizing: border-box;}
+table .review p {overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+table td.input_box {height: auto; padding: 2px 10px; text-align: left;}
+table td.input_box input {width: 120px; height: 40px; margin: 2px 0; box-sizing: border-box;}
+table td.input_box button {width: 15px; height: 15px; background: none; border: 1px solid #ccc; box-sizing: border-box; vertical-align: middle; margin-right: 15px;}
+
+.btn {position: relative; width: 100%; text-align: center; padding: 20px 0;}
+.btn button {width: 200px; height: 40px; border: 1px solid #ddd; background: #f5f5f5; margin: 0 15px;}
+
+.pgnation {text-align: center;}
+.pgnation ul {width: auto; height: 30px; display: inline-block; margin: 15px 0;}
+.pgnation ul li {width: 30px; height: 30px; float: left;}
+.pgnation ul li.pg a {line-height: 30px; text-align: center; font-size: 14px;}
+.pgnation ul li.now_pg a {font-weight: 600; color: #ffd906;}
+.pgnation ul li a {width: 100%; height: 100%;}
+.pgnation ul li.left_more a {background: url(../img/left_more.png)no-repeat; background-size: 100% 100%;}
+.pgnation ul li.left a {background: url(../img/left.png)no-repeat; background-size: 100% 100%;}
+.pgnation ul li.right a {background: url(../img/right.png)no-repeat; background-size: 100% 100%;}
+.pgnation ul li.right_more a {background: url(../img/right_more.png)no-repeat; background-size: 100% 100%;}
+
+.entry input {width: 100%; height: 100%;}
+.entry select {width: 100%; height: 100%;}
+.btn_edit button {width: 100%; height: 100%; border: 1px solid #ddd; background: #f5f5f5;}
+.btn_del button {width: 100%; height: 100%; border: 1px solid #ddd; background: #f5f5f5;}
+.btn_area {position: relative; width: 100%; text-align: center; padding: 30px 0;}
+.btn_area button {width: 200px; height: 40px; border: 1px solid #ddd; background: #f5f5f5; margin: 0 15px;}
+
+.sort {position: relative; width: 100%; height: auto;}
+.sort ul {display: inline-block; position: relative; top: 0; width: auto; height: 30px; margin-left: 20px;}
+.sort ul li {float: left; font-size: 0.9em; line-height: 30px; color: #555;}
+.sort ul li.line {margin: 0 10px;}
+.sort ul li.on {color: #000; font-weight: 600;}
+.sort > button {position: relative; top: 0; width: auto; height: 30px; border: 1px solid #ddd; background: #f5f5f5; vertical-align: top;}
+.sort .excel {display: inline-block; position: absolute; top: 0; right: 0;}
+.sort .excel button {position: relative; top: 0; width: auto; height: 30px; border: 1px solid #ddd; background: #f5f5f5; vertical-align: top;}
+.excel_down {width: 120px; height: 40px; border: 1px solid #ddd; background: #f5f5f5; margin-top: 20px;}
+
+.wait {color: red;}
+
+
+header {position: fixed; z-index: 10; top: 0; left: 0; width: 100%; height: 70px; background: #fff; padding: 0 50px; box-sizing: border-box; box-shadow: 0 1px 10px 0px #ccc;}
+header > .wrap {position: relative; width: 100%; height: 100%; }
+header > .wrap .logo {position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 150px; height: auto;}
+header > .wrap .right {position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 400px; height: 40px; line-height: 40px;}
+header > .wrap .right span {font-size: 0.9em;}
+header > .wrap .right a {font-size: 0.9em; margin-left: 45px;}
+header > .wrap .right a:hover {text-decoration: underline;}
+header > .wrap .right .menu_m {display: none;}
+header > .wrap .right .homepage {position: absolute; right: 0; width: 170px; height: 40px; background: #ffd906; border-radius: 50px; font-size: 0.9em; font-weight: 600;}
+
+.nav_bg {display: none;}
+.nav_m {display: none;}
+nav {position: fixed; z-index: 9; top: 70px; left: 0; width: 220px; height: calc(100vh - 70px); background: #efefef; overflow-y: auto;}
+nav a:hover {background: #ddd; text-decoration: none;}
+nav > .homepage {display: none;}
+nav > ul {position: relative; width: 100%; height: auto; padding: 10px; box-sizing: border-box;}
+nav > ul > li {position: relative; width: 100%; height: auto; border-bottom: 1px solid #ddd; box-sizing: border-box;}
+nav > ul > li > a {width: 100%; height: 100%; padding: 10px 10px; box-sizing: border-box;}
+nav > ul > li ul {display: ; position: relative; left: 0; width: 100%; height: auto; padding-left: 10px; box-sizing: border-box; font-size: 0.9em;}
+nav > ul > li ul li {position: relative; width: 100%; height: auto;}
+nav > ul > li ul li a {width: 100%; height: 100%; padding: 10px;box-sizing: border-box;}
+
+section article .wrap {position: relative; width: 100%; height: auto;}
+section article .search {position: relative; width: 100%; height: 45px; margin: 0 auto;}
+section article .search select {width: 23%; height: 100%; padding: 0 10px; font-size: 1em;}
+section article .search .search_input {display: inline-block; position: relative; width: 76%; height: 100%; border: 1px solid #ddd; box-sizing: border-box;}
+section article .search input {width: 90%; height: 100%; margin: 0 1%; border: 0;}
+section article .search button {position: absolute; top: 7px; right: 15px; width: auto; height: 30px; background: none;}
+section article .search button img {width: auto; height: 100%;}
+section article .tab_menu_m {display: none;}
+section article .tab_menu {position: relative; width: 100%; height: 45px; margin: 30px 0;}
+section article .tab_menu ul {position: relative; width: auto; height: 100%;}
+section article .tab_menu ul li {float: left; position: relative; width: 18%; height: 100%; margin: 0 1%; border-radius: 30px; box-sizing: border-box; text-align: center; line-height: 45px; border: 1px solid #ddd;}
+section article .tab_menu ul li.tab_menu_on {border: 2px solid #ffd906;}
+section article .tab_menu ul li a {width: 100%; height: 100%; border-radius: 30px;}
+section article .tab_menu ul li a:hover {background: #f5f5f5;}
+section article .tab_menu_home ul li {width: 15%; margin: 0 0.8%;}
+
+
+/* Login */
+
+section.login {padding: 0;}
+section.login article {top: 30%;}
+section.login form {text-align: center;}
+section.login .wrap {display: inline-block; width: auto;}
+section.login table {width: auto; margin: 0 auto;}
+section.login table th {font-size: 0.9em; height: 50px; padding: 5px 15px; box-sizing: border-box; text-align: left;}
+section.login table td {font-size: 0.9em; height: 50px; padding: 5px; box-sizing: border-box; text-align: left;}
+section.login table td input {width: 100%; height: 100%;}
+section.login .btn {text-align: center; margin-top: 10px;}
+section.login .btn button {width: 100%; height: 40px; border: 1px solid #ddd; background: #f5f5f5; margin: 0;}
+
+
+/* Join */
+
+.join {max-width: 800px;}
+.join input {height: 40px;}
+.join .phone td {text-align: left;}
+.join .phone select {width: 150px;}
+.join .phone input {width: 150px;}
+.join .email td {text-align: left;}
+.join .email select {width: 150px;}
+.join .email input {width: 150px;}
+
+
+/* Member */
+
+.member_info form table th {border: 0;}
+.member_info form table td {border: 0; padding: 5px 10px;}
+.member_info form table td select {padding: 0 10px; font-size: 1em;}
+.member_info .amount {position: relative; width: 100%; height: auto;}
+.member_info .amount table {position: relative; width: 100%; height: auto;}
+.member_info .amount table td {border: 0;}
+.member_info .amount table th {border: 0;}
+.member_info .amount table:first-child td {font-size: 0.8em; padding: 5px; text-align: right;}
+.member_info .amount table:first-child td label {width: auto; font-weight: 600; margin-right: 10px;}
+.member_info .amount table:first-child td input {width: 60%; height: 100%;}
+.member_info .amount table:last-child td {height: 50px; padding: 5px 5px; box-sizing: border-box; font-size: 0.9em;}
+.member_info .amount table:last-child td label {width: 20%; text-align: right; padding-right: 10px; box-sizing: border-box;}
+.member_info .amount table:last-child td input {width: 80%; height: 100%; text-align: center;}
+.member_info .amount table:last-child td button {width: 100%; height: 100%; border: 1px solid #ddd; background: #f5f5f5;}
+
+.member_baby .baby_sel {position: relative; width: auto; height: 40px;}
+.member_baby .baby_sel li {float: left; position: relative; width: 100px; height: 100%; margin: 0; box-sizing: border-box; text-align: center; line-height: 40px; border: 1px solid #ddd;}
+.member_baby .baby_sel li a {width: 100%; height: 100%;}
+.member_baby form fieldset legend {font-size: 1.1em; font-weight: 600; padding: 10px 25px;}
+.member_baby table th {font-size: 0.9em; border: 0;}
+.member_baby table td {font-size: 0.8em; border: 0; padding: 5px; text-align: left;}
+.member_baby table td input {width: 100%; height: 40px;}
+.member_baby table .trouble input {width: 88%;}
+.member_baby table .trouble input.r_input {position: absolute; left: -9999px;}
+.member_baby table .trouble label {position: relative; width: 129px; height: 40px; line-height: 18px; border: 1px solid #ccc; text-align: center; margin: 2px 0; padding: 0 5px; box-sizing: border-box;}
+.member_baby table .trouble label span {position: relative; top: 50%; transform: translateY(-50%);}
+.member_baby input:checked + label.check {border: 1px solid #ffd906;}
+.member_baby table.week td {font-size: 0.75em;}
+.member_baby table.week td input {width: 70%; margin-left: 3px;}
+
+.member_goods table td:first-child.review p {width: 90px; text-align: center;}
+.member_goods table td:nth-child(6).review p {width: 345px;}
+.member_goods_sub table tr:nth-child(2) td {text-align: center;}
+.member_goods_sub table .on {background: #efefef;}
+
+.member_hospital table p {text-align: center;}
+.member_hospital table td:nth-child(1).review p {width: 89px;}
+.member_hospital table td:nth-child(5).review p {width: 410px;}
+.member_hospital table tbody td:nth-child(5) {text-align: left; padding: 0 10px; box-sizing: border-box;}
+
+.other_menu {position: relative; width: 100%; height: 40px; line-height: 40px;}
+.other_menu li {float: left; position: relative; width: 14.28%; height: 100%; margin: 0; box-sizing: border-box; text-align: center; line-height: 40px; border: 1px solid #ddd;}
+.other_menu li.on {background: #ddd;}
+.other_menu li a {width: 100%; height: 100%;}
+.member_other {position: relative; width: 100%; height: auto;}
+.member_other table p {text-align: center; padding: 0 10px;}
+.member_other table .review p {width: 580px;}
+.member_other table .nick p {width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.member_other_one table td:nth-child(1) p {width: 90px;}
+.member_other_one table td:nth-child(2) p {width: 90px;}
+.member_other_two table td:nth-child(1) p {width: 90px;}
+.member_other_two table td:nth-child(2) p {width: 90px;}
+.member_other_three table td:nth-child(1) p {width: 110px;}
+.member_other_four table td:nth-child(1) p {width: 80px;}
+.member_other_five table td:nth-child(1) p {width: 165px;}
+.member_other_five table td:nth-child(2) p {width: 550px;}
+.member_other_six table td:nth-child(1) p {width: 150px;}
+.member_other_six table td:nth-child(2) p {width: 530px;}
+.member_other_point table td:nth-child(4) p {width: 120px;}
+.member_other_point table td:nth-child(5) p {width: 180px;}
+
+
+/* Home */
+
+.left {text-align: left;}
+.admin_home .btn_box {text-align: left;}
+.admin_home .btn_box button {height: 35px; background: #f5f5f5; border: 1px solid #ddd; vertical-align: middle; padding: 0 10px;}
+.admin_home .btn_box button img {width: auto; height: 15px;}
+.admin_home input {height: auto;}
+.admin_home .home3 label {margin-right: 30px;}
+.admin_home_low table li {float: left; width: 16.6%; height: 40px; padding: 3px; box-sizing: border-box;}
+.admin_home_low table li a {width: 100%; height: 100%; border: 1px solid #ddd; line-height: 34px;}
+.admin_home_low table td:nth-child(3) {}
+.admin_home .home6 td.left input {height: 40px;}
+
+
+/* DB */
+
+.DB_cate .sel_area {position: relative; left: 150px; width: 100%; height: auto; margin-bottom: 20px;}
+.DB_cate .sel_area > div {position: relative; width: 100%; height: 40px; padding: 5px 0; box-sizing: border-box;}
+.DB_cate .sel_area > div select {position: relative; width: 150px; height: 100%; vertical-align: middle;}
+.DB_cate .sel_area > div button {position: relative; width: 100px; height: 100%; vertical-align: top;}
+.DB_cate .box_grade {position: relative; width: 100%; height: auto; font-size: 0.9em;}
+.DB_cate .box_grade .quest {position: relative; width: 100%; height: 35px; line-height: 35px;}
+.DB_cate .box_grade .quest span {position: relative; width: 150px; height: 100%; float: left; text-align: center;}
+.DB_cate .box_grade .quest p {position: relative; width: calc(100% - 200px); height: 100%; float: left; border: 1px solid #ccc; padding: 0 10px;}
+.DB_cate .box_grade .ans {position: relative; width: 100%; height: auto; padding: 8px 0; box-sizing: border-box;}
+.DB_cate .box_grade .ans .ex {position: relative; left: 150px; width: calc(100% - 300px); height: auto;}
+.DB_cate .box_grade .ans .confirm {position: absolute; right: 28px; top: 10px; width: 120px;  height: 40px; border: 1px solid #ddd; background: #f5f5f5;}
+.DB_cate .box_grade .ans input.a_input {position: absolute; left: -9999px;}
+.DB_cate .box_grade .ans label {position: relative; width: 130px; height: 40px; line-height: 18px; border: 1px solid #ccc; text-align: left; margin: 2px 0; padding: 0 5px; box-sizing: border-box;}
+.DB_cate .box_grade .ans label span {position: relative; top: 50%; transform: translateY(-50%);}
+.DB_cate input:checked + label.check {border: 1px solid #ffd906;}
+.DB_cate .box_rev {position: relative; width: 100%; height: auto; font-size: 0.9em;}
+.DB_cate .box_rev dt {position: relative; width: 100%; height: 35px; line-height: 35px; text-align: center;}
+.DB_cate .box_rev dd {position: relative; left: 150px; width: calc(100% - 300px); height: auto; float: left; box-sizing: border-box;}
+.DB_cate .box_rev dd select {width: 130px; height: 40px; border: 1px solid #ccc; text-align: left; margin: 2px 0; padding: 0 5px; box-sizing: border-box;}
+.DB_cate .box_rev .btn_add {position: absolute; right: 28px; top: 35px; width: 120px;  height: 40px; border: 1px solid #ddd; background: #f5f5f5;}
+.DB_cate .box_rev .btn_add_m {display: none;}
+.DB_cate .btn_wrap {position: relative; width: 100%; text-align: center; padding-top: 10px;}
+.DB_cate .btn_wrap .btn_save {position: relative; width: 200px; height: 40px; border: 1px solid #ddd; background: #f5f5f5; }
+
+.DB_review .category {position: relative; width: 100%; height: 30px; line-height: 30px;}
+.DB_review .category select {position: relative; width: 150px; height: 100%;}
+.DB_review .filter {position: relative; width: 100%; height: auto; margin: 20px 0;}
+.DB_review .filter dl {position: relative; width: 100%; height: auto; margin: 10px 0; font-size: 0.9em;}
+.DB_review .filter dl dt {position: relative; width: 100%; height: 35px; line-height: 35px; padding: 0 20px;}
+.DB_review .filter dl dt button {width: 20px; height: 20px; vertical-align: middle; margin: 0 10px; border: 1px solid #ddd; background: none;}
+.DB_review .filter dl dd {position: relative; width: 100%; height: auto;}
+.DB_review .filter dl dd input.r_input {position: absolute; left: -9999px;}
+.DB_review .filter dl dd label {position: relative; width: 130px; height: 40px; line-height: 18px; border: 1px solid #ccc; text-align: center; margin: 2px 0; padding: 0 5px; box-sizing: border-box;}
+.DB_review .filter dl dd label span {position: relative; top: 50%; transform: translateY(-50%);}
+.DB_review input:checked + label.check {border: 1px solid #ffd906;}
+.DB_review .filter .btn_wrap {position: relative; width: 100%; text-align: center; padding-top: 10px;}
+.DB_review .filter .btn_wrap .btn_save {position: relative; width: 200px; height: 40px; border: 1px solid #ddd; background: #f5f5f5; }
+
+
+/* Goods DB */
+
+.goodsDB_DB .sort {height: 30px;}
+.goodsDB_DB .sort ul {width: 500px;}
+.goodsDB_DB .sort ul li {line-height: 30px;}
+.goodsDB_DB .sort button {width: 120px;}
+.goodsDB_DB .sort .excel {display: inline-block; position: absolute; top: 0; right: 0; width: 245px;}
+
+.goodsDB_DB_sub table.mobile {display: none;}
+.goodsDB_DB_sub table td {padding: 5px 10px;}
+.goodsDB_DB_sub table td.input_box .input_box_wrap {position: relative; width: 85%; height: auto;}
+.goodsDB_DB_sub table td.input_box button.add {position: absolute; top: 6px; right: 0; width: 100px; height: 40px; border: 1px solid #ccc;}
+.goodsDB_DB_sub .input_box .find_img {width: 120px; height: 40px;}
+
+
+/* Hospital DB */
+
+.hospitalDB_DB .sort ul {width: 500px;}
+.hospitalDB_DB .sort button {padding: 0 10px;}
+.hospitalDB_DB table th {height: 50px; text-align: center; border: 1px solid #eee; font-size: 0.9em;}
+.hospitalDB_DB table td {height: 50px; text-align: center; border: 1px solid #eee; font-size: 0.9em;}
+.hospitalDB_DB table td a:hover {text-decoration: underline;}
+.hospitalDB_DB_sub table th {height: 40px; text-align: center; border: 1px solid #eee; font-size: 0.9em;}
+.hospitalDB_DB_sub table td {position: relative; height: 40px; text-align: left; border: 1px solid #eee; font-size: 0.9em; padding: 5px 10px; box-sizing: border-box;}
+.hospitalDB_DB_sub table td select {width: 100%; height: 100%;}
+.hospitalDB_DB_sub table td.input_box input {width: 120px; height: 100%; box-sizing: border-box;}
+.hospitalDB_DB_sub table td.input_box button {width: 15px; height: 15px; background: none; border: 1px solid #ccc; box-sizing: border-box; vertical-align: middle; margin-right: 15px;}
+.hospitalDB_DB_sub table td.input_box button.add {position: absolute; top: 0; right: 0; width: 100px; height: 40px; border: 1px solid #ccc;}
+
+
+/* Admin_Review */
+
+.admin_review .wrap .sort ul {width: 700px;}
+.admin_review .wrap .sort .excel {width: 210px;}
+.admin_review .wrap .sort .excel button {width: 100px;}
+.admin_review .wrap table th {font-size: 0.8em}
+.admin_review .wrap table td {font-size: 0.8em}
+.admin_review .wrap table .review p {width: 227px;}
+.admin_review .wrap table .abb p {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left;}
+.admin_review .wrap table .userid p {width: 48px;}
+.admin_review .wrap table .email p {width: 108px;}
+.admin_review .wrap table .nick p {width: 88px;}
+.admin_review .wrap table .goodsid p {width: 48px;}
+.admin_review .wrap table .btn_confirm button {border: 1px solid #ccc; background: #f5f5f5; padding: 1px 3px;}
+.admin_review .wrap table caption {position: relative; width: 100%; padding: 10px; text-align: left; box-sizing: border-box;}
+
+.admin_review_sub table td {text-align: left; padding: 0 20px;}
+.admin_review_goods_sub table:first-child .review p {width: 775px;}
+.admin_review_goods_sub table:last-child .review p {width: 430px;}
+
+
+/* Com */
+
+.admin_com .sort ul {width:; height: 30px; margin-left: 20px;}
+.admin_com .sort button {padding: 0 10px; position: absolute; right: 0;}
+.admin_com table td a:hover {text-decoration: underline;}
+.admin_com table td select {width: 100%; height: 100%;}
+.admin_com table .review p {width: 245px;}
+.com_sel table .review p {width: 170px;}
+.com_sel table button {width: 100%; height: 40px; border: 1px solid #ccc; background: #f5f5f5;}
+
+.com_event_sub .list {position: relative; width: 100%; height: auto;}
+.com_event_sub .pop {z-index: 1; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 150px; background: #fff; border: 2px solid #ffd906;}
+.com_event_sub .pop .txt_box {position: relative; width: 100%; height: 100px;}
+.com_event_sub .pop .txt_box p {position: relative; top: 50%; transform: translateY(-50%); width: 100%; text-align: center;font-size: 0.9em;}
+.com_event_sub .pop .btn_box {position: absolute; bottom: 0; width: 100%; height: 50px; text-align: center;}
+.com_event_sub .pop .btn_box button {width: 120px; height: 35px; background: none; border: 1px solid #ddd;}
+.com_event_sub .pop .btn_box button:hover {background: #eee;}
+.com_event_sub table caption {position: relative; width: 100%; height: 50px; line-height: 40px; padding: 5px 10px; box-sizing: border-box; text-align: left;}
+.com_event_sub table caption button {position: absolute; right: 10px; width: 150px; height: 40px;  border: 1px solid #ccc; background: #f5f5f5; }
+
+
+/* Ranking */
+
+.admin_ranking .sub_menu {position: relative; width: 100%; height: 33px; font-size: 0.9em;}
+.admin_ranking .sub_menu li {float: left; position: relative; width: 14.28%; height: 100%; margin: 0; box-sizing: border-box; text-align: center; line-height: 30px; border: 1px solid #ddd;}
+.admin_ranking .sub_menu li.on {background: #ddd;}
+.admin_ranking .sub_menu li a {width: 100%; height: 100%;}
+
+.admin_ranking .sort > div {display: inline-block; position: relative; width: auto; height: 40px; padding: 5px 0; box-sizing: border-box;}
+.admin_ranking .sort .cate select {width: 150px; height: 100%;}
+.admin_ranking .sort .rank_search input {width: 150px; height: 100%;}
+.admin_ranking .sort .rank_search button {width: 100px; height: 100%; border: 1px solid #ddd; background: #f5f5f5; vertical-align: middle;}
+.admin_ranking .sort .date {position: absolute; right: 0; bottom: 0;}
+.admin_ranking .sort .date span {vertical-align: middle; font-size: 0.9em;}
+.admin_ranking .sort .date button {width: 50px; height: 100%; border: 1px solid #ddd; background: #f5f5f5;}
+
+.ranking_high table td:nth-child(2).review p {width: 80px;}
+.ranking_high table td:nth-child(3).review p {width: 130px;}
+.ranking_all table td:nth-child(2).review p {width: 80px;}
+.ranking_all table td:nth-child(3).review p {width: 130px;}
+.ranking_low table td:nth-child(2).review p {width: 80px;}
+.ranking_low table td:nth-child(3).review p {width: 130px;}
+
+.ranking_official table th {border: 0;}
+.ranking_official table td {text-align: left; border: 0;}
+.ranking_official table td input {width: 70px; height: 100%;}
+.ranking_official table td select {width: 200px;}
+.ranking_official dl {position: relative; width: 100%; height: auto; font-size: 0.9em; margin-top: 20px; line-height: 25px;}
+.ranking_official dl span {color: red; font-weight: 600;}
+.ranking_official dl dt {font-size: 1.1em; margin: 10px 0;}
+
+
+/* Award */
+
+.admin_award .mobile {display: none;}
+.admin_award .new_add {position: relative; width: 100%; height: 40px;}
+.admin_award .new_add button {position: absolute; right: 0; width: 150px; height: 40px; border: 1px solid #ddd; background: #f5f5f5;}
+.admin_award .review p {width: 480px;}
+.admin_award .add_area {position: relative; width: auto; height: auto; padding: 10px; margin-top: 10px;}
+.admin_award .add_area .input_wrap {display: inline-block; width: 80%; text-align: center;}
+.admin_award .add_area .input_wrap input {width: 20%; height: 40px; margin: 0 5px;}
+.admin_award .add_area button {position: absolute; top: 10px; right: 10px; width: 150px; height: 40px; border: 1px solid #ddd; background: #f5f5f5;}
+
+
+/* Fame */
+
+.admin_fame .sort .fame_search {position: absolute; top: 0; right: 0; width: auto; height: 100%;}
+.admin_fame .sort .fame_search input {width: 150px; height: 100%;}
+.admin_fame .sort .fame_search button {width: 100px; height: 100%; border: 1px solid #ddd; background: #f5f5f5; vertical-align: middle;}
+
+.fame_ranking table th {border: 0;}
+.fame_ranking table td {text-align: left; border: 0;}
+.fame_ranking table td input {width: 70px; height: 100%;}
+.fame_ranking table td select {width: 200px;}
+.fame_ranking dl {position: relative; width: 100%; height: auto; font-size: 0.9em; margin-top: 20px; line-height: 25px;}
+.fame_ranking dl dt {font-size: 1.1em; margin: 10px 0;}
+
+
+/* Notice */
+
+.admin_notice_alarm table td.review p {width: 450px;}
+.admin_notice_notice table td.review p {width: 600px;}
+.admin_notice_sub .sort li {margin-right: 20px;}
+.admin_notice_sub table td input {margin-right: 10px;}
+
+
+/* Request */
+
+.admin_request table td:nth-child(3).review p {width: 110px;}
+.admin_request table td:nth-child(4).review p {width: 450px;}
+
+
+/* ASK */
+
+.admin_ask .sort ul {margin-top: 20px;}
+.admin_ask .ask_type {width: 100%; height: auto;}
+.admin_ask .ask_type table th {border: 0;}
+.admin_ask .ask_type table td {border: 0;}
+.admin_ask .ask_type table select {width: 100%; height: 100%;}
+.admin_ask .ask_type table input {width: 100%; height: 100%;}
+.admin_ask .ask_type table button {width: 100%; height: 100%; border: 1px solid #ddd; background: #f5f5f5;}
+
+.admin_ask table td.review p {width: 420px;}
+.admin_ask_sub table td {text-align: left; padding: 0 10px; box-sizing: border-box;}
+
+
+/* AD */
+
+.admin_ad .sort button {position: absolute; top: 0; right: 0; width: 100px; height: 100%; border: 1px solid #ddd; background: #f5f5f5;}
+.admin_ad table caption button {position: absolute; top: 0; right: 0; width: 100px; height: 40px; border: 1px solid #ddd; background: #f5f5f5;}
+.admin_ad_main table td.review p {width: 170px;}
+.admin_ad_main_new .find_img {position: relative; width: 100%; height: 35px;}
+.admin_ad_main_new .find_img input {position: absolute; left: 0; width: 72%; height: 100%;}
+.admin_ad_main_new .find_img button {position: absolute; right: 0; background: #f5f5f5; border: 1px solid #ddd; height: 35px; padding: 0 10px; vertical-align: middle;}
+.admin_ad_db .scroll {position: relative; width: 1000px; overflow-x: auto; padding-bottom: 30px; box-sizing: border-box;}
+.admin_ad_db table {margin-top: 10px; width: 1200px;}
+.admin_ad_db table td:nth-child(1) p {width: 90px;}
+.admin_ad_db table td:nth-child(2) p {width: 120px;}
+.admin_ad_db table td:nth-child(3) p {width: 100px;}
+.admin_ad_db table td:nth-child(4) p {width: 100px;}
+.admin_ad_search .sort {height: 35px;}
+.admin_ad_search .sort button {position: relative;}
+.admin_ad_search .sort button img {width: auto; height: 15px;}
+.admin_ad_search .sort button.updown {width: 35px;}
+
+
+/* Brand */
+
+.admin_brand .sort ul {margin-top: 20px;}
+.admin_brand table {margin-top: 10px;}
+.admin_brand table th {height: 40px; text-align: center; border: 1px solid #eee; font-size: 0.9em;}
+.admin_brand table td {height: 40px; text-align: center; border: 1px solid #eee; font-size: 0.9em; padding: 5px 5px; box-sizing: border-box;}
+.admin_brand table td.review p {width: 148px;}
+.admin_brand table td.input_box {text-align: left;}
+.admin_brand table td.input_box input {width: 120px; height: 100%; box-sizing: border-box;}
+.admin_brand table td.input_box button {width: 15px; height: 15px; background: none; border: 1px solid #ccc; box-sizing: border-box; vertical-align: middle; margin-right: 15px;}
+.admin_brand .txt_box {margin: 20px 0;}
+.admin_brand .btn {position: relative; width: 100%; height: 40px; text-align: center; margin: 20px 0;}
+.admin_brand .btn button {width: 200px; height: 40px; border: 1px solid #ddd; background: #f5f5f5; margin: 0 15px;}
+
+
+/* Stats */
+
+.admin_stats .wrap {overflow-x: auto; padding-bottom: 30px; box-sizing: border-box;}
+.admin_stats form {width: auto;}
+.admin_stats fieldset {width: auto;}
+.admin_stats table {margin-top: 10px; width: 3000px;}
+.admin_stats table th {height: 40px; text-align: center; border: 1px solid #eee; font-size: 0.9em;}
+.admin_stats table td {height: 40px; text-align: center; border: 1px solid #eee; font-size: 0.9em; padding: 5px 5px; box-sizing: border-box;}
+.admin_stats table td.review p {width: 148px;}
